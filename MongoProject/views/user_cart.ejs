@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="container">
+      <fieldset>
+        <form action="/mainmenu" method="post">
+          <input type="submit" class="ghost-button" value="Shop Home">
+        </form>
+      </fieldset>
+    </div>
+	</body>
+  <body>
+    <div class="container">
+      <fieldset>
+        <form action="/checkout" method="post">
+          <input type="submit" class="ghost-button" value="Checkout">
+        </form>
+      </fieldset>
+    </div>
+	<% if (errorMessages.length>0) { %>
+    <div class="container">	
+		<table>
+		<tr>We're sorry, there was insuffient quantity for the following items. Quantities in cart have been adjusted and/or items have been removed.
+        <% for (var j = 0; j < errorMessages.length; j++) { %>		
+		<tr>
+			<h5><%= errorMessages[j]%></h5>  
+		<% } %>
+		</table>
+	</div>
+	<% } %>
+    <div class="container">	
+	<table>
+        <% for (var i = 0; i < products.length; i++) { %>
+		<% if (i%3==0) { %>
+		<tr>
+		<% } %>
+		<td>
+		  <div class="col-md-8">
+		    <fieldset>
+		    <form action="/remove_from_cart" method="post">
+			<img src="<%= products[i]["image"] %>" alt="<%= products[i]["name"] %>" class="img-fluid" style="width:128px;height:96px;">
+			<h5><%= products[i]["name"] %></h5>      
+			<p class="text-danger font-weight-bold">$<%= products[i]["price"] %></p>
+			<p class="text-danger font-weight-bold">Quantity in cart: <%= products[i]["quantity"] %></p>
+			<p>
+			  <%= products[i]["description"] %>
+			</p>
+			<input name="productId" type="hidden" value=<%= products[i]["productId"]%>>
+			<input type="submit" class="ghost-button" value="Remove From Cart">
+			</form>
+			</fieldset>			
+		  </div>	
+        <% } %>
+	</table>
+    </div>
+  </body>
+</html>

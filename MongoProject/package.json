@@ -1,0 +1,20 @@
+{
+  "name": "mongoproject",
+  "version": "1.0.0",
+  "description": "To start the MongodProject you first want to install mongodb and node onto your computer. Once you have them installed you want to open your command prompt and run mongod.exe so that the mongodb client is live on your computer. In another command prompt run find the MongoProject folder and run \"node server.js\" to start the server. Once both of these are live you can enter http://127.0.0.1:3000/ into your web browser and you'll have access to the MongoProject! By clicking on the Show Shop Catalog button you will see the animals that are for sale, their price, a description, and a image of them. If you press the Generate Fake Data button, it will generate new fake data to be shown in the Show Shop Catalog.",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "faker": "^5.5.3",
+    "mongodb": "^3.6.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

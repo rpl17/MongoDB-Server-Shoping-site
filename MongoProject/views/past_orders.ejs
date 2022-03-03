@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+</style>
+    <meta charset="utf-8">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="container">
+      <fieldset>
+        <form action="/mainmenu" method="post">
+          <input type="submit" class="ghost-button" value="Shop Home">
+        </form>
+      </fieldset>
+	  <h1 Past Orders</h1>
+    </div>
+	</body>
+  <body>
+    <div class="container">	
+	<fieldset>
+        <table>
+			<tr>
+			<th>                                       </th>
+			<th>Product Name</th>
+			<th>Unit Price</th>
+			<th>Quantity</th>
+			<th>Total</th>
+			</tr>
+			
+        <% for (var i = 0; i < products.length; i++) { %>
+		<% if (i%3==0) { %>
+		
+		<% } %>
+		  <div class="col-md-8">
+		    
+			<tr>
+			<td>OrderID: <%= products[i]["orderid"] %>
+			<p>Date: <%= products[i]["date"] %></td>
+			<td><%= products[i]["name"] %></td>
+			<td>$<%= products[i]["price"] %></td>
+			<td><%= products[i]["quantity"] %></td>
+			<td><%= products[i]["quantity"] * products[i]["price"] %></td>
+			</tr>
+					
+		  </div>	
+        <% } %>
+	</table>
+	</fieldset>
+    </div>
+  </body>
+</html>

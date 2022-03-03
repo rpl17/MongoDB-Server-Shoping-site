@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Results</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="container">
+      <fieldset>
+        <form action="/mainmenu" method="post">
+          <input type="submit" class="ghost-button" value="Shop Home">
+        </form>
+      </fieldset>
+    </div>
+	</body>
+  <body>
+    <div class="container">
+        <% for (var i = 0; i < employees.length; i++) { %>
+        <div>
+            <span><%= employees[i]["Employeeid"] %></span>
+            <span><%= employees[i]["Employee Name"] %></span>                 
+        </div>
+        <% } %>
+    </div>
+  </body>
+</html>
